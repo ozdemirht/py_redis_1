@@ -54,7 +54,24 @@ References
 https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
 
 How to connect to Redis by redis-cli?
-redis-cli -h 127.0.0.1 -p 6379
+```bash
+  redis-cli -h 127.0.0.1 -p 6379
+```
+
+<details>
+<summary>Helpful redis-cli commands</summary>
+<verbatim>
+> > KEYS d* <br>
+> ZRANGE drivers 0 -1 <br>
+> GEOPOS drivers deliveryAgent-0 <br>
+> GEOPOS drivers deliveryAgent-1 <br>
+> GEOPOS drivers deliveryAgent-2 <br>
+> GEOHASH drivers deliveryAgent-0 <br>
+> GEOHASH drivers deliveryAgent-1 <br>
+> GEOHASH drivers deliveryAgent-2 <br>
+> GEOSEARCH drivers FROM LONLAT -122.4 37.8 BYRADIUS 5000 M
+</verbatim>
+</details>
 
 How to connect to Redis by Redis Insights?
 Redis Insights : http://localhost:6379
