@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+entity deliveryAgent_1
+entity deliveryAgent_2
+
+node updateLocationMS
+
+node queryNearByMS
+
+node redis
+
+deliveryAgent_1 --> updateLocationMS
+
+deliveryAgent_2 --> updateLocationMS
+
+updateLocationMS --> redis
+
+queryNearByMS --> redis
+
+@enduml
