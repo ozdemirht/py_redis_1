@@ -31,15 +31,11 @@ Introduction
 Setup
 -----
 Run redis
+
 <details>
 <summary>docker-compose.yml</summary>
-@include "./setup/docker-compose.yml"
-
-<div>
-{% capture p1 %}{% include ./setup/docker-compose.yml %}{% endcapture %}
-{{ p1 | markdownify }}
-</div>
 </details>
+
 
 Run redis-cli
 
