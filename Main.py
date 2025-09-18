@@ -25,7 +25,7 @@ def run_test():
     current_time = start_time
     step = 0
 
-    while current_time < end_time:
+    while current_time < end_time and (step < 10):
         # Random small movement (lat ~111km per degree, lon ~85km near SF)
         lat += random.uniform(-0.0002, 0.0002)  # ≈ ±20m north/south
         lon += random.uniform(-0.00025, 0.00025)  # ≈ ±20m east/west
