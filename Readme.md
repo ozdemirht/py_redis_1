@@ -52,3 +52,9 @@ Occasional nearby queries list the delivery agents within the given radius.
 References
 ----------
 https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
+
+How to connect to Redis by redis-cli?
+redis-cli -h 127.0.0.1 -p 6379
+
+How to connect to Redis by Redis Insights?
+Redis Insights : http://localhost:6379
