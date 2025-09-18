@@ -49,9 +49,6 @@ Verify
 Program simulates the motion of multiple vehicles.
 Occasional nearby queries list the delivery agents within the given radius.
 
-References
-----------
-https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
 
 How to connect to Redis by redis-cli?
 ```bash
@@ -61,7 +58,7 @@ How to connect to Redis by redis-cli?
 <details>
 <summary>Helpful redis-cli commands</summary>
 <verbatim>
-> > KEYS d* <br>
+> KEYS d* <br>
 > ZRANGE drivers 0 -1 <br>
 > GEOPOS drivers deliveryAgent-0 <br>
 > GEOPOS drivers deliveryAgent-1 <br>
@@ -74,4 +71,9 @@ How to connect to Redis by redis-cli?
 </details>
 
 How to connect to Redis by Redis Insights?
+- 
 Redis Insights : http://localhost:6379
+
+References
+----------
+https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
