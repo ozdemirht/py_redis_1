@@ -10,6 +10,10 @@ node queryNearByMS
 
 node redis
 
+database database
+
+queue kafka_location_update
+
 deliveryAgent_1 --> updateLocationMS
 
 deliveryAgent_2 --> updateLocationMS
@@ -17,5 +21,8 @@ deliveryAgent_2 --> updateLocationMS
 updateLocationMS --> redis
 
 queryNearByMS --> redis
+updateLocationMS --> kafka_location_update
+
+kafka_location_update --> database
 
 @enduml
