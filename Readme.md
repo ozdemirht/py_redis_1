@@ -69,6 +69,11 @@ This implementation decision also requires verification with legal department du
 For the details of Redis geohashing implementation (52 bits) see [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/) 
 and [Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/).
 
+Verify
+------
+Program simulates the motion of multiple vehicles.
+Occasional nearby queries list the delivery agents within the given radius.
+
 <details>
 <summary>Sample simulation log</summary>
 [23:50:52] Step 3 of deliveryAgent-0 → Pos=(37.78775,-122.40731) 
@@ -83,11 +88,6 @@ and [Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/).
 <br>[23:51:12] Step 5 of deliveryAgent-1 → Pos=(37.78851,-122.40748) 
 <br>[23:51:12] Step 5 of deliveryAgent-0 → Pos=(37.78773,-122.40749)
 </details>
-
-Verify
-------
-Program simulates the motion of multiple vehicles.
-Occasional nearby queries list the delivery agents within the given radius.
 
 
 How to connect to Redis by redis-cli?
