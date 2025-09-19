@@ -41,6 +41,12 @@ Run redis-cli
 
 Run main.py
 
+**SimDeliveryAgent**: Simulates movements of a delivery agent who updates its location via updateLocationMS/Redis. 
+Because class **SimDeliveryAgent** extends from threading.Thread, each instance has its own thread. 
+
+**SimUser**: Simulates movements of a rider who also checks for nearby delivery agents (queryNearbyMS). 
+Because class **SimUser** extends from threading.Thread, each instance has its own thread. 
+
 ![](./docs/HLD-1.png)
 Figure 1: High Level Diagram
 
