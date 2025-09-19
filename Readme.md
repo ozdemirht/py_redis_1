@@ -56,6 +56,10 @@ GEOSEARCH can use member identifier and radius. Because Redis stores the locatio
 In this case, system needs to share the location of user entities. This increases the number of update location requests. 
 This implementation decision also requires verification with legal department due to data protection regulations and laws.
 
+[Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/) adds/updates the **last location** of an entity, (lon,lat,member_id). 
+For the details of Redis geohashing implementation (52 bits) see [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/) 
+and [Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/).
+
 Verify
 ------
 Program simulates the motion of multiple vehicles.
@@ -92,4 +96,6 @@ RedisInsight : http://localhost:5540
 References
 ----------
 1. [Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/)
+1. [Redis Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/)
+1. [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/)
 1. https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
