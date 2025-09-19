@@ -1,0 +1,3 @@
+*.log
+.venv/*
+./docs/HLD-0.puml

@@ -36,11 +36,13 @@ SimUser_2 --> queryNearByMS
 queryNearByMS --> redis
 
 updateLocationMS --> redis: 1 outbox
+
 updateLocationMS --> kafka_location_update: 2 outbox
-note right
+note right of kafka_location_update
 Partitioned
 Durable
 end note
+
 kafka_location_update --> WAL: 1
 kafka_location_update --> database: 2 bulk-write
 
