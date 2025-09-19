@@ -50,10 +50,11 @@ Because class **SimUser** extends from threading.Thread, each instance has its o
 ![](./docs/HLD-1.png)
 Figure 1: High Level Diagram
 
-[Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/) comes with two flavours that impacts how the system handle location data of entities.
-GEOSEARCH can use given location (longitude,latitude) and radius. Beyond a location coordinates, there is nothing shared with Redis. 
-GEOSEARCH can use given member identifier and radius. Because Redis stores the location of given member, it can translate the request to the above GEOSEARCH. 
+[Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/) comes with two flavours that impact how the system handle location of entities.
+GEOSEARCH can use given location (longitude,latitude) and radius. Beyond the given coordinates, there is nothing shared with Redis. 
+GEOSEARCH can use member identifier and radius. Because Redis stores the location of given member, it can translate the request to the above GEOSEARCH. 
 In this case, system needs to share the location of user entities. This increases the number of update location requests. 
+This implementation decision also requires verification with legal department due to data protection regulations and laws.
 
 Verify
 ------
