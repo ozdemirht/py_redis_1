@@ -27,7 +27,6 @@ SimDeliveryAgent_1 --> updateLocationMS
 deliveryAgent_2 --> SimDeliveryAgent_2
 SimDeliveryAgent_2 --> updateLocationMS
 
-updateLocationMS --> redis
 
 User_1 --> SimUser_1
 SimUser_1 --> queryNearByMS
@@ -36,7 +35,8 @@ SimUser_2 --> queryNearByMS
 
 queryNearByMS --> redis
 
-updateLocationMS --> kafka_location_update
+updateLocationMS --> redis: 1 outbox
+updateLocationMS --> kafka_location_update: 2 outbox
 note right
 Partitioned
 Durable
