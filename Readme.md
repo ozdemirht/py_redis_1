@@ -50,6 +50,11 @@ Because class **SimUser** extends from threading.Thread, each instance has its o
 ![](./docs/HLD-1.png)
 Figure 1: High Level Diagram
 
+[Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/) comes with two flavours that impacts how the system handle location data of entities.
+GEOSEARCH can use given location (longitude,latitude) and radius. Beyond a location coordinates, there is nothing shared with Redis. 
+GEOSEARCH can use given member identifier and radius. Because Redis stores the location of given member, it can translate the request to the above GEOSEARCH. 
+In this case, system needs to share the location of user entities. This increases the number of update location requests. 
+
 Verify
 ------
 Program simulates the motion of multiple vehicles.
@@ -74,6 +79,8 @@ How to connect to Redis by redis-cli?
 > GEOHASH drivers deliveryAgent-1 <br>
 > GEOHASH drivers deliveryAgent-2 <br>
 > GEOSEARCH drivers FROM LONLAT -122.4 37.8 BYRADIUS 5000 M
+> GEOSEARCH drivers FROM LONLAT -122.4 37.8 BYRADIUS 5000 M WITHDIST WITHHASH WITHCOORD
+> GEOSEARCH drivers FROMMEMBER User-1 BYRADIUS 5000 M WITHDIST WITHHASH WITHCOORD
 </verbatim>
 </details>
 
@@ -83,4 +90,5 @@ RedisInsight : http://localhost:5540
 
 References
 ----------
-https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
+1. [Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/)
+1. https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
