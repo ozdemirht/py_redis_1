@@ -79,7 +79,7 @@ How to connect to Redis by redis-cli?
 
 How to connect to Redis by Redis Insight?
 - 
-RedisInsight : http://localhost:6379
+RedisInsight : http://localhost:5540
 
 References
 ----------
