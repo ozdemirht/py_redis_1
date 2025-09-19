@@ -34,6 +34,15 @@ Run redis
 
 <details>
 <summary>docker-compose.yml</summary>
+<verbatim>
+version: '3.8'
+services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    command: redis-server --protected-mode no
+</verbatim>
 </details>
 
 
