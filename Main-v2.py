@@ -1,3 +1,4 @@
+from encodings.punycode import selective_find
 
 import redis
 import os
