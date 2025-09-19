@@ -3,6 +3,13 @@
 
 entity deliveryAgent_1
 entity deliveryAgent_2
+agent SimDeliveryAgent_1
+agent SimDeliveryAgent_2
+actor User_1
+actor User_2
+agent SimUser_1
+agent SimUser_2
+file WAL
 
 node updateLocationMS
 
@@ -14,15 +21,27 @@ database database
 
 queue kafka_location_update
 
-deliveryAgent_1 --> updateLocationMS
+deliveryAgent_1 --> SimDeliveryAgent_1
+SimDeliveryAgent_1 --> updateLocationMS
 
-deliveryAgent_2 --> updateLocationMS
+deliveryAgent_2 --> SimDeliveryAgent_2
+SimDeliveryAgent_2 --> updateLocationMS
 
 updateLocationMS --> redis
 
-queryNearByMS --> redis
-updateLocationMS --> kafka_location_update
+User_1 --> SimUser_1
+SimUser_1 --> queryNearByMS
+User_2 --> SimUser_2
+SimUser_2 --> queryNearByMS
 
-kafka_location_update --> database
+queryNearByMS --> redis
+
+updateLocationMS --> kafka_location_update
+note right
+Partitioned
+Durable
+end note
+kafka_location_update --> WAL: 1
+kafka_location_update --> database: 2
 
 @enduml
