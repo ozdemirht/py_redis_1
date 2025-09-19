@@ -35,9 +35,9 @@ SimUser_2 --> queryNearByMS
 
 queryNearByMS --> redis
 
-updateLocationMS --> redis: 1 outbox
+updateLocationMS --> redis: 1 write-async
 
-updateLocationMS --> kafka_location_update: 2 outbox
+updateLocationMS --> kafka_location_update: 2 write-async
 note right of kafka_location_update
 Partitioned
 Durable

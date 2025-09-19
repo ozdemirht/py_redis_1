@@ -34,7 +34,7 @@ Run redis
 
 <details>
 <summary>docker-compose.yml</summary>
-```
+```bash
 version: '3.8'
 services:
   redis:
@@ -68,6 +68,21 @@ This implementation decision also requires verification with legal department du
 [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/) adds/updates the **last location** of an entity, (lon,lat,member_id). 
 For the details of Redis geohashing implementation (52 bits) see [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/) 
 and [Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/).
+
+<details>
+<summary>Sample simulation log</summary>
+[23:50:52] Step 3 of deliveryAgent-0 → Pos=(37.78775,-122.40731) 
+<br>[23:50:52] Step 3 of deliveryAgent-1 → Pos=(37.78848,-122.40757) 
+<br>[23:50:52] Step 3 of deliveryAgent-2 → Pos=(37.78757,-122.40685) 
+<br>[23:51:02] Step 2 of user-0 → Pos=(37.78790,-122.40742,447.46) Nearby=[b'deliveryAgent-0', b'deliveryAgent-2', b'deliveryAgent-1']
+<br>[23:51:02] Step 2 of user-1 → Pos=(37.78792,-122.40750,64.63) Nearby=[b'deliveryAgent-0', b'deliveryAgent-1']
+<br>[23:51:02] Step 4 of deliveryAgent-1 → Pos=(37.78858,-122.40737) 
+<br>[23:51:02] Step 4 of deliveryAgent-2 → Pos=(37.78750,-122.40680) 
+<br>[23:51:02] Step 4 of deliveryAgent-0 → Pos=(37.78762,-122.40756) 
+<br>[23:51:12] Step 5 of deliveryAgent-2 → Pos=(37.78769,-122.40678) 
+<br>[23:51:12] Step 5 of deliveryAgent-1 → Pos=(37.78851,-122.40748) 
+<br>[23:51:12] Step 5 of deliveryAgent-0 → Pos=(37.78773,-122.40749)
+</details>
 
 Verify
 ------
