@@ -1,5 +1,5 @@
-from django.db.models.functions import NullIf
-from encodings.punycode import selective_find
+#from django.db.models.functions import NullIf
+#from encodings.punycode import selective_find
 
 import redis
 import os
@@ -177,4 +177,4 @@ def run_test():
 
 if __name__ == "__main__":
     #run_test()
-    run_test1()
+    run_test()
