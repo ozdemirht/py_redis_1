@@ -42,6 +42,6 @@ Partitioned
 Durable
 end note
 kafka_location_update --> WAL: 1
-kafka_location_update --> database: 2
+kafka_location_update --> database: 2 bulk-write
 
 @enduml
