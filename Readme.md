@@ -62,6 +62,7 @@ Because class **SimDeliveryAgent** extends from threading.Thread, each instance 
 Because class **SimUser** extends from threading.Thread, each instance has its own thread. 
 
 ![HLD](./docs/HLD-1.png)
+
 Figure 1: High Level Desig Diagram
 
 [Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/) comes with two flavours that impact how the system handle location of entities.
@@ -131,4 +132,5 @@ References
 1. [Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/)
 1. [Redis Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/)
 1. [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/)
+1. [Valkey](https://valkey.io/topics/data-types/)
 1. https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html
