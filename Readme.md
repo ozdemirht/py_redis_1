@@ -28,11 +28,16 @@ Introduction
 }
 ```
 
-Setup
------
-Run redis
+## Setup
 
-docker-compose.yml file
+
+### Run redis
+
+Run with docker
+```bash
+  docker compose docker-compose.yml
+```
+and docker-compose.yml file
 ```bash
 version: '3.8'
 services:
@@ -43,15 +48,10 @@ services:
     command: redis-server --protected-mode no
 ```
 
-Run with docker
-```bash
-  docker compose docker-compose.yml
-```
 
+### Run redis-cli
 
-Run redis-cli
-
-Run main.py
+### Run main.py
 
 **SimDeliveryAgent**: Simulates movements of a delivery agent who updates its location via updateLocationMS/Redis. 
 Because class **SimDeliveryAgent** extends from threading.Thread, each instance has its own thread. 
@@ -72,8 +72,8 @@ This implementation decision also requires verification with legal department du
 For the details of Redis geohashing implementation (52 bits) see [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/) 
 and [Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/).
 
-Verify
-------
+## Verify
+
 Program simulates the motion of multiple vehicles.
 Occasional nearby queries list the delivery agents within the given radius.
 
@@ -93,8 +93,12 @@ Occasional nearby queries list the delivery agents within the given radius.
 </details>
 
 
-How to connect to Redis by redis-cli?
---
+## Q&A
+
+#### How to connect to Redis by redis-cli?
+
+We can use localhost interface to connect.
+
 ```bash
   redis-cli -h 127.0.0.1 -p 6379
 ```
@@ -116,8 +120,8 @@ How to connect to Redis by redis-cli?
 </verbatim>
 </details>
 
-How to connect to Redis by Redis Insight?
-- 
+#### How to connect to Redis by Redis Insight?
+
 RedisInsight : http://localhost:5540
 
 References
