@@ -32,18 +32,21 @@ Setup
 -----
 Run redis
 
-<details>
-<summary>docker-compose.yml</summary>
+docker-compose.yml file
+```bash
+version: '3.8'
+services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    command: redis-server --protected-mode no
+```
 
-<br>version: '3.8'
-<br>services:
-<br>  redis:
-<br>    image: redis
-<br>    ports:
-<br>      - "6379:6379"
-<br>    command: redis-server --protected-mode no
-
-</details>
+Run with docker
+```bash
+  docker compose docker-compose.yml
+```
 
 
 Run redis-cli
