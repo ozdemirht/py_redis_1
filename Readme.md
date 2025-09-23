@@ -77,6 +77,11 @@ This implementation decision also requires verification with legal department du
 For the details of Redis geohashing implementation (52 bits) see [Redis GEOADD](https://redis.io/docs/latest/commands/geoadd/) 
 and [Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/).
 
+Redis HSET contains the attributes of each member_id. 
+
+MHSET deliveryAgent-0 location_lo %lon location_la %lat location_ts %ts status 'available'
+
+
 ## Verify
 
 Program simulates the motion of multiple vehicles.
