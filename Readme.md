@@ -65,6 +65,8 @@ Because class **SimUser** extends from threading.Thread, each instance has its o
 
 Figure 1: High Level Desig Diagram
 
+#### Redis Geospatial Index
+
 [Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/) comes with two flavours that impact how the system handle location of entities.
 GEOSEARCH can use given location (longitude,latitude) and radius. Beyond the given coordinates, there is nothing shared with Redis. 
 GEOSEARCH can use member identifier and radius. Because Redis stores the location of given member, it can translate the request to the above GEOSEARCH. 
