@@ -61,8 +61,8 @@ Because class **SimDeliveryAgent** extends from threading.Thread, each instance 
 **SimUser**: Simulates movements of a rider who also checks for nearby delivery agents (queryNearbyMS). 
 Because class **SimUser** extends from threading.Thread, each instance has its own thread. 
 
-![](./docs/HLD-1.png)
-Figure 1: High Level Diagram
+![HLD](./docs/HLD-1.png)
+Figure 1: High Level Desig Diagram
 
 [Redis GEOSEARCH](https://redis.io/docs/latest/commands/geosearch/) comes with two flavours that impact how the system handle location of entities.
 GEOSEARCH can use given location (longitude,latitude) and radius. Beyond the given coordinates, there is nothing shared with Redis. 
