@@ -35,13 +35,13 @@ Run redis
 <details>
 <summary>docker-compose.yml</summary>
 ```bash
-version: '3.8'
-services:
-  redis:
-    image: redis
-    ports:
-      - "6379:6379"
-    command: redis-server --protected-mode no
+<br>version: '3.8'
+<br>services:
+<br>  redis:
+<br>    image: redis
+<br>    ports:
+<br>      - "6379:6379"
+<br>    command: redis-server --protected-mode no
 ```
 </details>
 
@@ -108,8 +108,8 @@ How to connect to Redis by redis-cli?
 > GEOHASH drivers deliveryAgent-1 <br>
 > GEOHASH drivers deliveryAgent-2 <br>
 > GEOSEARCH drivers FROM LONLAT -122.4 37.8 BYRADIUS 5000 M
-> GEOSEARCH drivers FROM LONLAT -122.4 37.8 BYRADIUS 5000 M WITHDIST WITHHASH WITHCOORD
-> GEOSEARCH drivers FROMMEMBER User-1 BYRADIUS 5000 M WITHDIST WITHHASH WITHCOORD
+<br>> GEOSEARCH drivers FROM LONLAT -122.4 37.8 BYRADIUS 5000 M WITHDIST WITHHASH WITHCOORD
+<br>> GEOSEARCH drivers FROMMEMBER User-1 BYRADIUS 5000 M WITHDIST WITHHASH WITHCOORD
 </verbatim>
 </details>
 
