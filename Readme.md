@@ -34,7 +34,7 @@ Run redis
 
 <details>
 <summary>docker-compose.yml</summary>
-```bash
+
 <br>version: '3.8'
 <br>services:
 <br>  redis:
@@ -42,7 +42,7 @@ Run redis
 <br>    ports:
 <br>      - "6379:6379"
 <br>    command: redis-server --protected-mode no
-```
+
 </details>
 
 
