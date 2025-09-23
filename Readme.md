@@ -79,7 +79,9 @@ and [Sorted Set](https://redis.io/docs/latest/develop/data-types/sorted-sets/).
 
 Redis HSET contains the attributes of each member_id. 
 
-MHSET deliveryAgent-0 location_lo %lon location_la %lat location_ts %ts status 'available'
+```bash
+> MHSET deliveryAgent-0 location_lo %lon location_la %lat location_ts %ts status 'available'
+```
 
 
 ## Verify
