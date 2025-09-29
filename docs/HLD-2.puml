@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+actor User_1
+actor User_2
+actor Restaurant_1
+
+node updateLocationMS
+
+node queryNearByMS
+
+node GoogleS2
+
+database database
+note right of database
+Key-Value (DynamoDB)
+Cassandra
+RDBMS
+end note
+
+User_1 --> queryNearByMS
+User_2 --> queryNearByMS
+
+node redis
+
+queryNearByMS --> GoogleS2 : NNQ 1
+queryNearByMS --> redis : NNQ 2.1
+queryNearByMS --> database : NNQ 2.2 Details (cache miss)
+
+Restaurant_1 --> updateLocationMS
+updateLocationMS --> GoogleS2
+
+@enduml
