@@ -5,11 +5,33 @@ actor User_1
 actor User_2
 actor Restaurant_1
 
+node user_1_ui
+node user_2_ui
+node restaurant_1_ui
+
 node updateLocationMS
 
 node queryNearByMS
 
 node GoogleS2
+node CDN
+note left of CDN
+Caching
+Media Assets
+end note
+
+file S2PointIndexFile
+note right of S2PointIndexFile
+On AWS_S3
+end note
+
+file WAL
+
+storage AWS_S3
+note right of AWS_S3
+Stores
+Media Assets
+end note
 
 database database
 note right of database
@@ -18,16 +40,23 @@ Cassandra
 RDBMS
 end note
 
-User_1 --> queryNearByMS
-User_2 --> queryNearByMS
+User_1 --> user_1_ui: Find restaurants
+user_1_ui --> queryNearByMS
+User_2 --> user_2_ui
+user_2_ui --> queryNearByMS
 
 node redis
 
 queryNearByMS --> GoogleS2 : NNQ 1
 queryNearByMS --> redis : NNQ 2.1
-queryNearByMS --> database : NNQ 2.2 Details (cache miss)
+queryNearByMS --> database : NNQ 2.2 Details (miss)
+user_2_ui --> CDN: Fetch media
+CDN --> AWS_S3: Fetch media (miss)
 
-Restaurant_1 --> updateLocationMS
+Restaurant_1 --> restaurant_1_ui
+restaurant_1_ui --> updateLocationMS
 updateLocationMS --> GoogleS2
+GoogleS2 --> S2PointIndexFile
+database --> WAL
 
 @enduml
