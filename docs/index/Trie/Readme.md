@@ -3,7 +3,7 @@
 ## Introduction
 Java implementation of Trie data structure. 
 
-dsa.prob_trie.java file contains a sample Trie implementation. 
+[dsa.prob_trie.java](./src/dsa/prob_trie.java) file contains a sample Trie implementation. 
 This test reads instructions from data/trie_test1_input.txt 
 
 There are two instructions: add and find
